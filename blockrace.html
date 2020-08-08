@@ -18,6 +18,7 @@
 var myGamePiece;
 var myObstacles = [];
 var myScore;
+var obstacleInterval = 150;
 
 function startGame() {
   myGamePiece = new component(20, 30, "red", 10, 120);
@@ -109,7 +110,8 @@ function updateGameArea() {
   if (myGameArea.keys && myGameArea.keys[38]) {myGamePiece.speedY = -1; }
   if (myGameArea.keys && myGameArea.keys[40]) {myGamePiece.speedY = 1; }
   myGameArea.frameNo += 1;
-  if (myGameArea.frameNo == 1 || everyinterval(150)) {
+
+  if (myGameArea.frameNo == 1 || everyinterval(obstacleInterval)) {
     x = myGameArea.canvas.width;
     minHeight = 20;
     maxHeight = 200;
